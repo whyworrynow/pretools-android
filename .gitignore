@@ -1,0 +1,44 @@
+# Buildozer files
+.buildozer/
+bin/
+.buildozer_global/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build outputs
+output/
+*.apk
+*.aab
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Test files
+test_*.py
+*_test.py
+
+# Original large file (keep only the ported versions)
+pretools_250815_v1.py
