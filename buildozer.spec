@@ -20,7 +20,7 @@ version = 1.0
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy==2.1.0,android,pyjnius,plyer,pillow
+requirements = python3,kivy==2.1.0,android,pyjnius,plyer
 
 # (str) Supported orientation (landscape, sensorLandscape, portrait or sensorPortrait)
 orientation = portrait
@@ -32,16 +32,16 @@ fullscreen = 0
 android.permissions = WRITE_EXTERNAL_STORAGE,READ_EXTERNAL_STORAGE,INTERNET,SYSTEM_ALERT_WINDOW
 
 # (int) Target Android API, should be as high as possible.
-android.api = 30
+android.api = 29
 
 # (int) Minimum API your APK will support.
 android.minapi = 21
 
 # (str) Android NDK version to use
-android.ndk = 20b
+android.ndk = 19c
 
 # (int) Android SDK version to use
-android.sdk = 28
+android.sdk = 29
 
 # (str) Android app theme, default is ok for Kivy-based app
 android.theme = "@android:style/Theme.NoTitleBar.Fullscreen"

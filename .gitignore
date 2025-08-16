@@ -41,4 +41,20 @@ test_*.py
 *_test.py
 
 # Original large file (keep only the ported versions)
-pretools_250815_v1.py
+pretools_*.py
+PreTools_*.py
+
+# Test and development files
+test_*.py
+enhanced_ui.py
+main.py
+create_icon.py
+
+# Claude settings
+.claude/
+
+# Package files
+package*.json
+
+# Icons folder (individual icons already included)
+icons/

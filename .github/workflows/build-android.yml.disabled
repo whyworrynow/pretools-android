@@ -23,8 +23,11 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y git zip unzip openjdk-8-jdk python3-pip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev
-        pip3 install --upgrade buildozer
-        pip3 install --upgrade cython
+        sudo apt-get install -y build-essential libssl-dev libffi-dev python3-dev
+        pip3 install --upgrade pip setuptools wheel
+        pip3 install --upgrade buildozer==1.5.0
+        pip3 install --upgrade cython==0.29.36
+        pip3 install --upgrade kivy==2.1.0
 
     - name: Setup Android SDK
       uses: android-actions/setup-android@v2
@@ -44,7 +47,12 @@ jobs:
     - name: Build with Buildozer
       run: |
         export PATH=$PATH:~/.local/bin/
-        buildozer android debug
+        export ANDROID_HOME=$ANDROID_SDK_ROOT
+        export NDK_HOME=$ANDROID_NDK_ROOT
+        # buildozer 권한 확인 우회
+        export BUILDOZER_WARN_ON_ROOT=0
+        # 빌드 시도
+        buildozer android debug || (echo "First build failed, trying again..." && buildozer android debug)
         
     - name: Sign APK (optional)
       run: |
